@@ -97,7 +97,11 @@ zeppelin_erc20_files:=totalSupply-spec.k \
              transferFrom-success-2-spec.k \
              transferFrom-failure-1-a-spec.k \
              transferFrom-failure-1-b-spec.k \
-             transferFrom-failure-2-spec.k
+             transferFrom-failure-2-spec.k \
+             myTotalSuppy-spec.k \
+             myBalanceOf-spec.k \
+             increaseApproval-success-spec.k \
+             increaseApproval-failure-spec.k
 
 hobby_erc20_files:=totalSupply-spec.k \
                    balanceOf-spec.k \
