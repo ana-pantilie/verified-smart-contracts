@@ -101,7 +101,9 @@ zeppelin_erc20_files:=totalSupply-spec.k \
              myTotalSuppy-spec.k \
              myBalanceOf-spec.k \
              increaseApproval-success-spec.k \
-             increaseApproval-failure-spec.k
+             increaseApproval-failure-spec.k \
+             decreaseApproval-success-1-spec.k \
+             decreaseApproval-success-2-spec.k 
 
 hobby_erc20_files:=totalSupply-spec.k \
                    balanceOf-spec.k \
