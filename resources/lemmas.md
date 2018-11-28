@@ -325,5 +325,7 @@ These lemmas abstract some properties about `#sizeWordStack`:
 
     rule WS ++ .WordStack => WS
 
+    rule store(store(S,K,V1),K,V2) => store(S,K,V2)
+
 endmodule
 ```
