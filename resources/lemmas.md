@@ -327,5 +327,8 @@ These lemmas abstract some properties about `#sizeWordStack`:
 
     rule store(store(S,K,V1),K,V2) => store(S,K,V2)
 
+    syntax Bool ::= IMap "==IMap" IMap [function, smtlib(=)]
+    
+
 endmodule
 ```
