@@ -325,10 +325,29 @@ These lemmas abstract some properties about `#sizeWordStack`:
 
     rule WS ++ .WordStack => WS
 
-    rule store(store(S,K,V1),K,V2) => store(S,K,V2)
-
     syntax Bool ::= IMap "==IMap" IMap [function, smtlib(=)]
     
+    syntax Bool ::= IMap "==IMap" IMap "except" Set [function]
+
+    rule store(M1, K, _) ==IMap M2 except Ks
+        =>       M1        ==IMap M2 except Ks
+    requires K in Ks
+
+    rule M1 ==IMap store(M2, K, _) except Ks
+        => M1 ==IMap       M2        except Ks
+    requires K in Ks
+
+    rule M1 ==IMap M2 except _ => true
+    requires M1 ==K M2  // structural equality
+
+
+    syntax Set ::= keys(IMap) [function]
+
+    rule K1 in keys(store(M, K2, _)) => true          requires K1  ==Int K2
+    rule K1 in keys(store(M, K2, _)) => K1 in keys(M) requires K1 =/=Int K2
+
+    rule hash2(K1,P1) =/=Int hash2(K2,P2) => true requires K1 =/=Int K2 orBool P1 =/=Int P2
+    rule hash2(K1,K2) ==Int hash2(K3,K4) => true requires K1 ==Int K3 andBool K2 ==Int K4
 
 endmodule
 ```
