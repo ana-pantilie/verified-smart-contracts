@@ -346,8 +346,8 @@ These lemmas abstract some properties about `#sizeWordStack`:
     rule K1 in keys(store(M, K2, _)) => true          requires K1  ==Int K2
     rule K1 in keys(store(M, K2, _)) => K1 in keys(M) requires K1 =/=Int K2
 
-    rule hash2(K1,P1) =/=Int hash2(K2,P2) => true requires K1 =/=Int K2 orBool P1 =/=Int P2
-    rule hash2(K1,K2) ==Int hash2(K3,K4) => true requires K1 ==Int K3 andBool K2 ==Int K4
+    rule hash2(K1,V1) =/=Int hash2(K2,V2) => K1 =/=Int K2 orBool V1 =/=Int V2
+    rule hash2(K1,V1) ==Int hash2(K2,V2) => K1 ==Int K2 andBool V1 ==Int V2
 
 endmodule
 ```
