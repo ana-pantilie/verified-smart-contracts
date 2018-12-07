@@ -72,12 +72,12 @@ Proof Claims
 The first part of the claim is largely static (or abstracted away, like `<previousGas>`).
 
 ```{.k .sum-to-n}
-    rule <k> #execute ... </k>
+    rule <k> #execute => #halt </k>
          <mode> NORMAL </mode>
          <schedule> DEFAULT </schedule>
          <callStack> .List </callStack>
          <memoryUsed> 0   </memoryUsed>
-         <localMem> .Map </localMem>
+         <localMem> .IMap </localMem>
          <previousGas> _ => _ </previousGas>
          <program> sumTo(N) </program>
 ```
@@ -92,7 +92,7 @@ The first part of the claim is largely static (or abstracted away, like `<previo
 ```{.k .sum-to-n}
      <pc>        0  => 53                                </pc>
      <wordStack> WS => 0 : N *Int (N +Int 1) /Int 2 : WS </wordStack>
-     <gas>       G  => G -Int (52 *Int N +Int 27)        </gas>
+     <gas>       G  => _        </gas>
 
   requires N >=Int 0
    andBool N <=Int 340282366920938463463374607431768211455
@@ -108,12 +108,12 @@ Proof Claims
 The circularity is in the same static environment as the overall proof-goal.
 
 ```{.k .sum-to-n}
-    rule <k> #execute ... </k>
+    rule <k> #execute => #halt </k>
          <mode> NORMAL </mode>
          <schedule> DEFAULT </schedule>
          <callStack> .List </callStack>
          <memoryUsed> 0   </memoryUsed>
-         <localMem> .Map </localMem>
+         <localMem> .IMap </localMem>
          <previousGas> _ => _ </previousGas>
          <program> sumTo(N) </program>
 ```
@@ -130,7 +130,7 @@ We specify the behaviour of the rest of the program any time it reaches the loop
 
 ```{.k .sum-to-n}
      <pc> 35 => 53                         </pc>
-     <gas> G => G -Int (52 *Int I +Int 21) </gas>
+     <gas> G => _ </gas>
 
      <wordStack> I : S                               : WS
               => 0 : S +Int I *Int (I +Int 1) /Int 2 : WS </wordStack>
