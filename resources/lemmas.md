@@ -46,9 +46,6 @@ The following lemmas are used for symbolic reasoning about `MLOAD` and `MSTORE` 
 They capture the essential mechanisms used by the two instructions: splitting a word into the byte-array and merging it back to the word.
 
 ```k
-    rule 0 <=Int nthbyteof(V, I, N)          => true
-    rule         nthbyteof(V, I, N) <Int 256 => true
-
     rule #asWord( nthbyteof(V,  0, 32)
                 : nthbyteof(V,  1, 32)
                 : nthbyteof(V,  2, 32)
@@ -83,13 +80,10 @@ They capture the essential mechanisms used by the two instructions: splitting a 
                 : nthbyteof(V, 31, 32)
                 : .WordStack ) => V
       requires 0 <=Int V andBool V <Int pow256
-
-    rule 0 <=Int #asWord(#bufSeg(_, _, _))                 => true
-    rule         #asWord(#bufSeg(_, _, WIDTH)) <Int pow256 => true
-
-    rule         #asWord(#bufSeg(_, _, WIDTH)) <=Int 255 => true requires WIDTH ==Int 1
-
-    rule #buf(32, #asWord(#bufSeg(BUF, START, WIDTH))) => #bufSeg(BUF, START +Int WIDTH -Int 32, 32)  requires WIDTH >=Int 32
+      
+    rule #asWord( 0 : W1 : WS  =>  W1 : WS )
+      
+    rule nthbyteof(N, 0, 1) => N
 ```
 
 Another type of byte-array manipulating operation is used to extract the function signature from the call data.
@@ -103,8 +97,10 @@ The following lemmas essentially capture the signature extraction mechanisms.
 It reduces the reasoning efforts of the underlying theorem prover, factoring out the essence of the byte-twiddling operations.
 
 ```k
-    rule #padToWidth(32, #asByteStack(V)) => #buf(32, V) // #asByteStackInWidth(V, 32)
-      requires 0 <=Int V andBool V <Int pow256
+    syntax Bool ::= #isRegularWordStack ( WordStack ) [function]
+ // -------------------------------------------------------
+    rule #isRegularWordStack(N : WS => WS)
+    rule #isRegularWordStack(.WordStack) => true
 
     // for Vyper
     rule #padToWidth(N, #asByteStack(#asWord(WS))) => WS
@@ -166,13 +162,6 @@ It reduces the reasoning efforts of the underlying theorem prover, factoring out
     rule keccak(WS) => keccakIntList(byteStack2IntList(WS))
       requires ( notBool #isConcrete(WS) )
        andBool ( #sizeWordStack(WS) ==Int 32 orBool #sizeWordStack(WS) ==Int 64 )
-
-    // inverse of intList2ByteStack of edsl.md
-    syntax IntList ::= byteStack2IntList ( WordStack )       [function]
-                     | byteStack2IntList ( WordStack , Int ) [function]
-    rule byteStack2IntList ( WS ) => byteStack2IntList ( WS , #sizeWordStack(WS) /Int 32 ) requires #sizeWordStack(WS) %Int 32 ==Int 0
-    rule byteStack2IntList ( WS , N ) => #asWord ( WS [ 0 .. 32 ] ) byteStack2IntList ( #drop(32, WS) , N -Int 1 ) requires N >Int 1
-    rule byteStack2IntList ( WS , 1 ) => #asWord ( WS [ 0 .. 32 ] ) .IntList
 ```
 
 ### Integer Expression Simplification Rules
@@ -183,7 +172,6 @@ These rules help to improve the performance of the underlying theorem prover’s
 Below are universal simplification rules that are free to be used in any context.
 
 ```k
-    rule 0 +Int N => N
     rule N +Int 0 => N
 
     rule N -Int 0 => N
@@ -209,18 +197,19 @@ The rules are applied only when the side-conditions are met.
 These rules are specific to reasoning about EVM programs.
 
 ```k
-    rule (I1 +Int I2) +Int I3 => I1 +Int (I2 +Int I3) when #isConcrete(I2) andBool #isConcrete(I3)
-    rule (I1 +Int I2) -Int I3 => I1 +Int (I2 -Int I3) when #isConcrete(I2) andBool #isConcrete(I3)
-    rule (I1 -Int I2) +Int I3 => I1 -Int (I2 -Int I3) when #isConcrete(I2) andBool #isConcrete(I3)
-    rule (I1 -Int I2) -Int I3 => I1 -Int (I2 +Int I3) when #isConcrete(I2) andBool #isConcrete(I3)
+    //orienting symbolic term to be first, converting -Int to +Int
+    rule I +Int B => B          +Int I when #isConcrete(I) andBool notBool #isConcrete(B)
+    rule I -Int B => (0 -Int B) +Int I when #isConcrete(I) andBool notBool #isConcrete(B) andBool I =/=Int 0
+    rule A -Int I => A +Int (0 -Int I) when notBool #isConcrete(A) andBool #isConcrete(I)
+    rule 0 -Int (0 -Int X) => X
 
-    rule I1 +Int (I2 +Int I3) => I2 +Int (I1 +Int I3) when #isConcrete(I1) andBool #isConcrete(I3)
-    rule I1 +Int (I2 +Int I3) => I3 +Int (I1 +Int I2) when #isConcrete(I1) andBool #isConcrete(I2)
+    rule (A +Int I2) +Int I3 => A +Int (I2 +Int I3) when notBool #isConcrete(A) andBool #isConcrete(I2) andBool #isConcrete(I3)
+    rule I1 +Int (B +Int I3) => B +Int (I1 +Int I3) when #isConcrete(I1) andBool notBool #isConcrete(B) andBool #isConcrete(I3)    
 
-    rule (I1 +Int I2) +Int (I3 -Int I2) => I1 +Int I3
-    rule (I1 +Int I2) -Int (I1 +Int I3) => I2 -Int I3
+    rule I  +Int (0 -Int C) => (0 -Int C) +Int I when         #isConcrete(I) andBool notBool #isConcrete(C)
+    rule A  +Int (0 -Int C) =>  A -Int C         when notBool #isConcrete(A) andBool notBool #isConcrete(C)
 
-    rule I1 &Int (I2 &Int I3) => (I1 &Int I2) &Int I3 when #isConcrete(I1) andBool #isConcrete(I2)
+    rule I1 &Int (I2 &Int C) => (I1 &Int I2) &Int C when #isConcrete(I1) andBool #isConcrete(I2) andBool notBool #isConcrete(C)
 
     // 0xffff...f &Int N = N
     rule MASK &Int N => N  requires MASK ==Int (2 ^Int (log2Int(MASK) +Int 1)) -Int 1 // MASK = 0xffff...f
@@ -231,14 +220,23 @@ These rules are specific to reasoning about EVM programs.
                             andBool 0 <=Int N andBool N <=Int MASK
 
 
-    rule #asWord(#bufSeg(BUF, START, WIDTH)) &Int 255 => #asWord(#bufSeg(BUF, START +Int WIDTH -Int 1, 1))  requires WIDTH >=Int 1
-    rule 255 &Int #asWord(#bufSeg(BUF, START, WIDTH)) => #asWord(#bufSeg(BUF, START +Int WIDTH -Int 1, 1))  requires WIDTH >=Int 1
-
 
     // for gas calculation
     rule A -Int (#if C #then B1 #else B2 #fi) => #if C #then (A -Int B1) #else (A -Int B2) #fi
     rule (#if C #then B1 #else B2 #fi) -Int A => #if C #then (B1 -Int A) #else (B2 -Int A) #fi
 ```
+
+Operator direction normalization rules. Required to reduce the number of forms of inequalities that can be matched by 
+general lemmas. We chose to keep `<Int` and `<=Int` because those operators are used in all range lemmas and in
+`#range` macros. Operators `>Int` and `>=Int` are still allowed anywhere except rules LHS.
+In all other places they will be matched and rewritten by rules below.
+```k
+    rule X >Int Y => Y <Int X
+    rule X >=Int Y => Y <=Int X
+    
+    rule notBool (X <Int Y) => Y <=Int X
+    rule notBool (X <=Int Y) => Y <Int X
+``` 
 
 ### Boolean
 
@@ -282,6 +280,12 @@ from their concrete semantics.
 Below are the most common such range matching lemmas.
 
 ```k
+    rule 0 <=Int nthbyteof(V, I, N)          => true
+    rule         nthbyteof(V, I, N) <Int 256 => true
+    
+    rule 0 <=Int #asWord(WS)          => true
+    rule #asWord(WS) <Int pow256      => true
+    
     rule 0 <=Int hash1(_)             => true
     rule         hash1(_) <Int pow256 => true
 
@@ -302,12 +306,25 @@ Because lemmas are applied as plain K rewrite rule, they have to match exactly, 
 For example the lemma `rule A < 100 => true` won't match the side condition `requires A <= 99` or 
 `requires 100 > A`.
 To avoid such mismatching situations we need additional expression normalization rules.
-At the moment we have only one, that converts `maxUInt256` to `pow256`.
+First rule below converts `maxUInt256` to `pow256`.
 It allows side conditions that use `maxUInt256` or `#range` macros 
 match the range lemmas above. Note that lemmas above all use `<Int pow256` for the upper range.
+The other rules are similar.
 
 ```k
     rule X <=Int maxUInt256 => X <Int pow256
+    rule X <=Int maxUInt160 => X <Int pow160
+    rule X <=Int 255        => X <Int 256
+    
+    //Range transformation, required for example for chop reduction rules below.
+    rule X <Int pow256 => true
+      requires X <Int 256
+      
+    rule X <Int pow256 => true
+      requires X <Int pow160
+      
+    rule 0 <=Int X => true
+      requires 0 <Int X
 ```
 
 ### `chop` Reduction
@@ -348,6 +365,15 @@ These lemmas abstract some properties about `#sizeWordStack`:
 
     rule hash2(K1,V1) =/=Int hash2(K2,V2) => K1 =/=Int K2 orBool V1 =/=Int V2
     rule hash2(K1,V1) ==Int hash2(K2,V2) => K1 ==Int K2 andBool V1 ==Int V2
+    
+    rule 0 <=Int #sizeWordStack ( _ , _ ) => true [smt-lemma]
+    /*rule #sizeWordStack ( WS , N:Int )
+      => #sizeWordStack ( WS , 0 ) +Int N
+      requires N =/=K 0*/
+    rule #sizeWordStack ( WS , N:Int )
+      => N +Int #sizeWordStack ( WS , 0 )
+      requires N =/=K 0
+      [lemma]
 
 endmodule
 ```
