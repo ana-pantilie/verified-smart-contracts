@@ -20,6 +20,13 @@ module VERIFICATION
     rule #infinity <Int A => false
       requires #getKLabelString(A) =/=String "#infinity_VERIFICATION"
 
+// non-determinism 
+//    rule A -Int (#if C #then B1 #else B2 #fi) => #if C #then (A -Int B1) #else (A -Int B2) #fi
+//        requires A =/=Int #infinity
+//
+//    rule (#if C #then B1 #else B2 #fi) -Int A => #if C #then (B1 -Int A) #else (B2 -Int A) #fi
+//        requires A =/=Int #infinity
+//
     rule minInt(#infinity, #infinity) => #infinity
 
   // ########################
@@ -213,5 +220,9 @@ module VERIFICATION
     rule #asWord(selectRange(M, START, 32)) &Int (powmod(256, MASKWIDTH, pow256) -Int 1) => #asWord(#buf(32 -Int MASKWIDTH, 0) ++ selectRange(M, START +Int 32 -Int MASKWIDTH, MASKWIDTH))
       requires 0 <=Int MASKWIDTH
        andBool MASKWIDTH <=Int 32
+
+// // non-deterministic function error
+//     rule A -Int (#if C #then B1 #else B2 #fi) => #if C #then (A -Int B1) #else (A -Int B2) #fi
+//         requires A =/=Int #infinity
 
 endmodule
