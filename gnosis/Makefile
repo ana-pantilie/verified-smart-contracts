@@ -7,7 +7,7 @@ SPEC_GROUP:=gnosis
 SPEC_INI:=gnosis-spec.ini
 
 KPROVE_OPTS:=--smt-prelude $(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST))))/evm.smt2) \
-             --deterministic-functions --cache-func-optimized --log-basic
+             --deterministic-functions --cache-func-optimized --log-basic --debug-z3-queries
 
 SPEC_NAMES:=encodeTransactionData \
             signatureSplit \

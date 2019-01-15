@@ -134,8 +134,9 @@
 // TODO: move this in gnosis-spec.ini
          <account>
              // testing the external contract call in checkSignatures
-             <acctID> #parseHexWord(substrString({SIG_BYTES}, 0, 32)) </acctID>
-             <balance> _ </balance>
+             // #parseHexWord(substrString({SIG_BYTES}, 0, 32))
+             <acctID> 9 </acctID>
+             <balance> EXT_BAL </balance>
              <code> #parseByteStack({EXTERNAL_CONTRACT_CODE}) </code>
              <storage> _ </storage>
              <origStorage> _ </origStorage>
