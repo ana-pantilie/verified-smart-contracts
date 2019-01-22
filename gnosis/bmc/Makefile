@@ -12,12 +12,18 @@ KPROVE_OPTS:=--smt-prelude $(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST)
 SPEC_NAMES:=encodeTransactionData \
             signatureSplit \
             checkSignatures-thres-too-large \
-            checkSignatures-ext-contract-true-1 \
-            checkSignatures-ext-contract-true-2 \
-            checkSignatures-thres-1-sig-v0 \
-            checkSignatures-thres-1-sig-v0-invalidInstr \
-            checkSignatures-thres-1-sig-v0-success-false-notValidSig \
+            checkSignatures-thres-1-sig-v0-success-false-returnFalse \
             checkSignatures-thres-1-sig-v0-success-false-return0 \
+            checkSignatures-thres-1-sig-v0-success-false-2-returnTrue \
+            checkSignatures-thres-1-sig-v0-success-false-2-returnUint \
+            checkSignatures-thres-1-sig-v0-success-false-2-returnInt \
+            checkSignatures-thres-1-sig-v0-success-false-2-returnBytes \
+            checkSignatures-thres-1-sig-v0-success-true-returnTrue \
+            checkSignatures-thres-1-sig-v0-success-true-returnUint \
+            checkSignatures-thres-1-sig-v0-success-true-returnInt \
+            checkSignatures-thres-1-sig-v0-success-true-returnBytes \
+            checkSignatures-thres-1-sig-v0-revert-diffFuncSig \
+            checkSignatures-thres-1-sig-v0-revert-noFunc \
             checkSignatures-thres-1-sig-v2-ec0 \
             checkSignatures-thres-1-sig-v2-not-ec0-success \
             checkSignatures-thres-1-sig-v2-not-ec0-notOwner \
