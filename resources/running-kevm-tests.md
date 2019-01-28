@@ -20,7 +20,7 @@ Example Usage
 After building the definition, you can run the tests using `./kevm`.
 Read the [`./kevm`](https://github.com/kframework/evm-semantics/blob/master/kevm) script for the actual invocations of `krun` that `./kevm` makes.
 
-Here is an example showing how to run the [`add0.json`](https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) test file using the `java` backend:
+Here is an example showing how to run the [add0.json](https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) test file using the `java` backend:
 
 ```sh
   $ MODE=VMTESTS SCHEDULE=DEFAULT ./kevm run --backend java tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
@@ -62,34 +62,35 @@ Run Options
 Normal usage:
 
 ```sh
-        $0 run            [--backend <backend>] <pgm>   <K args>*
-        $0 [debug|search]                       <pgm>   <K args>*
-        $0 prove                                <spec>  <K args>*
+  $ ./kevm run            [--backend <backend>] <pgm>   <K args>*
+  $ ./kevm [debug|search]                       <pgm>   <K args>*
+  $ ./kevm prove                                <spec>  <K args>*
 ```
--   `run`            Run a single EVM program
--   `debug`          Run a single EVM program in the debugger
--   `search`         Run a program searching for all execution paths
--   `prove`          Attempt to prove the specification using K's RL prover
+
+-   `run` &nbsp; &nbsp; Run a single EVM program
+-   `debug` &nbsp; Run a single EVM program in the debugger
+-   `search` &nbsp;Run a program searching for all execution paths
+-   `prove` &nbsp; Attempt to prove the specification using K's RL prover
 
 Notes:
-- `<pgm>`  represents a path to a Ethereum test program
-- `<spec>` represents a path to a specification file
+- `<pgm>` &nbsp; &nbsp;represents a path to a Ethereum test program
+- `<spec>` &nbsp; represents a path to a specification file
 - `<K args>` are any options you want to pass directly to K like:
-    -   `--debug`: output more debugging information when running/proving.
+    - `--debug`: output more debugging information when running/proving.
 
 
     These commands are more for devs and CI servers.
 
 ```sh
-        $0 interpret           <pgm>
-        $0 [test|test-profile] [--backend <backend>] <pgm> <output>
-        $0 sort-logs
-        $0 get-failing [<count>]
+  $ ./kevm interpret           <pgm>
+  $ ./kevm [test|test-profile] [--backend <backend>] <pgm> <output>
+  $ ./kevm sort-logs
+  $ ./kevm get-failing [<count>]
 ```
--   `interpret`      Run a single EVM program (in JSON testing format) using fast interpreter
--   `test`           Run a single EVM program like it's a test
--   `test-profile`   Same as test, but generate list of failing tests and dump timing information
--   `sort-logs`      Normalize the test logs for CI servers to use
--   `get-failing`    Return a list of failing tests, at most <count>.
+-   `interpret` &nbsp; &nbsp; Run a single EVM program (in JSON testing format) using fast interpreter
+-   `test` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Run a single EVM program like it's a test
+-   `test-profile` &nbsp;Same as test, but generate list of failing tests and dump timing information
+-   `sort-logs` &nbsp; &nbsp; Normalize the test logs for CI servers to use
+-   `get-failing` &nbsp; Return a list of failing tests, at most <count>.
 
 Note: `<output>` is the expected output of the given test.
