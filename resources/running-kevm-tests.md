@@ -9,10 +9,10 @@
 ### Instalation
 
 ```sh
-        $ cd evm-semantics
-        $ make deps split-tests -B -j2
-        $ make build-java -j2
-        $ git submodule update --init
+  $ cd evm-semantics
+  $ make deps split-tests -B -j2
+  $ make build-java -j2
+  $ git submodule update --init
 ```
 Example Usage
 -------------
@@ -20,10 +20,10 @@ Example Usage
 After building the definition, you can run the tests using `./kevm`.
 Read the [`./kevm`](https://github.com/kframework/evm-semantics/blob/master/kevm) script for the actual invocations of `krun` that `./kevm` makes.
 
-Here is an example showing how to run the file [`tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json`] (https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) using the `java` backend.
+Here is an example showing how to run the file [`tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json`](https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) using the `java` backend.
 
 ```sh
-        $ MODE=VMTESTS SCHEDULE=DEFAULT ./kevm run --backend java tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
+  $ MODE=VMTESTS SCHEDULE=DEFAULT ./kevm run --backend java tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
 ```
 
 NOTE: export `MODE` and `SCHEDULE` as environment variables.
@@ -34,26 +34,26 @@ You can run the test using different backends: `ocaml`|`java`|`haskell`|`haskell
 Run the same file as a test:
 
 ```sh
-        $ ./kevm test tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
+  $ ./kevm test tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
 ```
 
 To run proofs, you can similarly use `./kevm`.
 For example, to prove the specification `tests/proofs/specs/vyper-erc20/totalSupply-spec.k`:
 
 ```sh
-        $ ./kevm prove tests/proofs/specs/vyper-erc20/totalSupply-spec.k
+  $ ./kevm prove tests/proofs/specs/vyper-erc20/totalSupply-spec.k
 ```
 
 Finally, if you want to debug a given program (by stepping through its execution), you can use the `debug` option:
 
 ```sh
-        $ ./kevm debug tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
-...
-KDebug> s
-1 Step(s) Taken.
-KDebug> p
-... Big Configuration Here ...
-KDebug>
+  $ ./kevm debug tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
+  ...
+  KDebug> s
+  1 Step(s) Taken.
+  KDebug> p
+  ... Big Configuration Here ...
+  KDebug>
 ```
 
 Run Options
