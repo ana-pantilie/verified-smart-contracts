@@ -20,7 +20,7 @@ Example Usage
 After building the definition, you can run the tests using `./kevm`.
 Read the [`./kevm`](https://github.com/kframework/evm-semantics/blob/master/kevm) script for the actual invocations of `krun` that `./kevm` makes.
 
-Here is an example showing how to run the [`add0.json`][https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) test file using the `java` backend:
+Here is an example showing how to run the [`add0.json`](https://github.com/ethereum/tests/blob/725dbc73a54649e22a00330bd0f4d6699a5060e5/VMTests/vmArithmeticTest/add0.json) test file using the `java` backend:
 
 ```sh
   $ MODE=VMTESTS SCHEDULE=DEFAULT ./kevm run --backend java tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
