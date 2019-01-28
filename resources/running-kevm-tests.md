@@ -26,9 +26,9 @@ Here is an example showing how to run the [add0.json](https://github.com/ethereu
   $ MODE=VMTESTS SCHEDULE=DEFAULT ./kevm run --backend java tests/ethereum-tests/VMTests/vmArithmeticTest/add0.json
 ```
 
-NOTE: export `MODE` and `SCHEDULE` as environment variables.
+**Notes:** export `MODE` and `SCHEDULE` as environment variables.
 
-You can run the test using different backends: `ocaml`|`java`|`haskell`|`haskell-perf`. The preferred backend can be choosed using `--backend` argument. By default, `OCaml` is selected.
+You can run the test using different backends: `ocaml`|`java`|`haskell`|`haskell-perf`. The preferred backend can be chosen using `--backend` argument. By default, `OCaml` is selected.
 
 
 Run the same file as a test:
@@ -72,7 +72,7 @@ Normal usage:
 -   `search` Run a program searching for all execution paths
 -   `prove` &nbsp; Attempt to prove the specification using K's RL prover
 
-Notes:
+**Notes:**
 - `<pgm>` &nbsp; &nbsp; &nbsp; represents a path to a Ethereum test program
 - `<spec>` &nbsp; &nbsp; represents a path to a specification file
 - `<K args>` are any options you want to pass directly to `K` like:
@@ -93,4 +93,4 @@ Notes:
 -   `sort-logs` &nbsp; &nbsp; &nbsp; Normalize the test logs for CI servers to use
 -   `get-failing` &nbsp; Return a list of failing tests, at most `<count>`.
 
-Note: `<output>` is the expected output of the given test.
+**Notes:** `<output>` is the expected output of the given test.
