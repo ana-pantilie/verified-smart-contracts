@@ -67,15 +67,15 @@ Normal usage:
   $ ./kevm prove                                <spec>  <K args>*
 ```
 
--   `run` &nbsp; &nbsp; Run a single EVM program
+-   `run`&nbsp; &nbsp; &nbsp; &nbsp;Run a single EVM program
 -   `debug` &nbsp; Run a single EVM program in the debugger
--   `search` &nbsp;Run a program searching for all execution paths
+-   `search` Run a program searching for all execution paths
 -   `prove` &nbsp; Attempt to prove the specification using K's RL prover
 
 Notes:
-- `<pgm>` &nbsp; &nbsp;represents a path to a Ethereum test program
-- `<spec>` &nbsp; represents a path to a specification file
-- `<K args>` are any options you want to pass directly to K like:
+- `<pgm>` &nbsp; &nbsp; &nbsp; represents a path to a Ethereum test program
+- `<spec>` &nbsp; &nbsp; represents a path to a specification file
+- `<K args>` are any options you want to pass directly to `K` like:
     - `--debug`: output more debugging information when running/proving.
 
 
@@ -87,10 +87,10 @@ Notes:
   $ ./kevm sort-logs
   $ ./kevm get-failing [<count>]
 ```
--   `interpret` &nbsp; &nbsp; Run a single EVM program (in JSON testing format) using fast interpreter
--   `test` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Run a single EVM program like it's a test
--   `test-profile` &nbsp;Same as test, but generate list of failing tests and dump timing information
--   `sort-logs` &nbsp; &nbsp; Normalize the test logs for CI servers to use
--   `get-failing` &nbsp; Return a list of failing tests, at most <count>.
+-   `interpret`&nbsp; &nbsp; &nbsp; &nbsp;Run a single EVM program (in JSON testing format) using fast interpreter
+-   `test` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Run a single EVM program like it's a test
+-   `test-profile` Same as test, but generate list of failing tests and dump timing information
+-   `sort-logs` &nbsp; &nbsp; &nbsp; Normalize the test logs for CI servers to use
+-   `get-failing` &nbsp; Return a list of failing tests, at most `<count>`.
 
 Note: `<output>` is the expected output of the given test.
