@@ -59,7 +59,7 @@ Finally, if you want to debug a given program (by stepping through its execution
 Run Options
 -------------
 
-Normal usage:
+**Normal usage:**
 
 ```sh
   $ ./kevm run            [--backend <backend>] <pgm>   <K args>*
@@ -79,7 +79,7 @@ Normal usage:
     - `--debug`: output more debugging information when running/proving.
 
 
-    These commands are more for devs and CI servers.
+**More commands for devs and CI servers:**
 
 ```sh
   $ ./kevm interpret           <pgm>
