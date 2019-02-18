@@ -1,0 +1,242 @@
+
+======= SimpleStorage.sol:SimpleStorage =======
+EVM assembly:
+    /* "SimpleStorage.sol":25:291  contract SimpleStorage {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "SimpleStorage.sol":25:291  contract SimpleStorage {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "SimpleStorage.sol":25:291  contract SimpleStorage {... */
+      mstore(0x40, 0x80)
+      callvalue   
+        /* "--CODEGEN--":8:17   */
+      dup1  // callvalue callvalue
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_1
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_1:
+        /* "SimpleStorage.sol":25:291  contract SimpleStorage {... */
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      calldataload(0x00) // calldata
+      0x0100000000000000000000000000000000000000000000000000000000 // 28 calldata
+      swap1 // calldata 28
+      div   // 28 byte right shift calldata = fhash
+      dup1  // fhash fhash
+      0x60fe47b1 // hash fhash fhash 
+      eq         // 0 fhash
+      tag_3      // tag_3 0 fhash
+      jumpi      // fhash
+      dup1       // fhash fhash
+      0x6d4ce63c
+      eq
+      tag_4
+      jumpi
+      dup1
+      0x7cf5dab0 // hash fhash fhash
+      eq         // 1 fhash
+      tag_5      // tag_5 1 fhash
+      jumpi      // fhash
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "SimpleStorage.sol":76:135  function set(uint x) public {... */
+    tag_3:
+      tag_6
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_7
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_7:
+        /* "SimpleStorage.sol":76:135  function set(uint x) public {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_8
+      jump	// in
+    tag_6:
+      stop
+        /* "SimpleStorage.sol":213:289  function get() public view returns (uint) {... */
+    tag_4:
+      tag_9
+      tag_10
+      jump	// in
+    tag_9:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "SimpleStorage.sol":141:207  function increment(uint x) public {... */
+    tag_5:
+      tag_11  // tag_11 fhash
+      0x04    // 4 tag_11 fhash
+      dup1    // 4 4 tag_11 fhash
+      calldatasize  // calldatasize 4 4 tag_11 fhash
+      sub           
+        /* "--CODEGEN--":13:15   */
+      0x20         // 32 (calldatasize - 4) 4 tag11 fhash
+        /* "--CODEGEN--":8:11   */
+      dup2         // (calldatasize - 4) 32 (calldatasize - 4) 4 tag11 fhash
+        /* "--CODEGEN--":5:16   */
+      lt           // 0 (calldatasize - 4) 4 tag11 fhash 
+        /* "--CODEGEN--":2:4   */
+      iszero       // 1 (calldatasize - 4) 4 tag11 fhash
+      tag_12       // tag_12 1 (calldatasize - 4) 4 tag11 fhash
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_12:
+        /* "SimpleStorage.sol":141:207  function increment(uint x) public {... */
+      dup2    // 4 (calldatasize - 4) 4 tag11 fhash
+      add     // calldatasize 4 tag11 fhash
+      swap1   // 4 calldatasize tag11 fhash
+      dup1    // 
+      dup1    // 4 4 calldatasize tag11 fhash
+      calldataload  // x 4 calldatasize tag11 fhash
+      swap1         // 4 x calldatasize tag11 fhash
+      0x20          // 32 4 x calldatasize tag11 fhash
+      add           // 36 x calldatasize tag11 fhash
+      swap1         // x 36 calldatasuze tag11 fhash
+      swap3         // tag11 36 calldatasize x fhash
+      swap2         // calldatasize 36 tag11 x fhash
+      swap1         // 36 calldatasize tag11 x fhash
+      pop           
+      pop
+      pop
+      tag_13        // tag13 x fhash
+      jump	// in
+    tag_11:
+      stop
+        /* "SimpleStorage.sol":76:135  function set(uint x) public {... */
+    tag_8:
+        /* "SimpleStorage.sol":127:128  x */
+      dup1
+        /* "SimpleStorage.sol":114:124  storedData */
+      0x00
+        /* "SimpleStorage.sol":114:128  storedData = x */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "SimpleStorage.sol":76:135  function set(uint x) public {... */
+      pop
+      jump	// out
+        /* "SimpleStorage.sol":213:289  function get() public view returns (uint) {... */
+    tag_10:
+        /* "SimpleStorage.sol":249:253  uint */
+      0x00
+        /* "SimpleStorage.sol":272:282  storedData */
+      dup1
+      sload
+        /* "SimpleStorage.sol":265:282  return storedData */
+      swap1
+      pop
+        /* "SimpleStorage.sol":213:289  function get() public view returns (uint) {... */
+      swap1
+      jump	// out
+        /* "SimpleStorage.sol":141:207  function increment(uint x) public {... */
+    tag_13:
+        /* "SimpleStorage.sol":199:200  x */
+      dup1  // x x fhash 
+        /* "SimpleStorage.sol":185:195  storedData */
+      0x00  // 0 x x fhash
+      dup1  // 0 0 x x fhash
+        /* "SimpleStorage.sol":185:200  storedData += x */
+      dup3  // x 0 0 x x fhash
+      dup3  // 0 x 0 0 x x fhash
+      sload  // s x 0 0 x x fhash
+      add    // (s + x) 0 0 x x fhash
+      swap3  // x 0 0 (s + x) x fhash
+      pop    
+      pop
+      dup2   // (s + x) 0 (s + x) x fhash 
+      swap1  // 0 (s + x) (s + x) x fhash 
+      sstore // (s + x) x fhash
+      pop  
+        /* "SimpleStorage.sol":141:207  function increment(uint x) public {... */
+      pop    // fhash
+      jump	// out
+
+    auxdata: 0xa165627a7a7230582087b62883c2541b124376b163160ea246e4e4801f70ffeead143fd9a55eb5d0a20029
+}
+
