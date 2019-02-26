@@ -1,0 +1,2991 @@
+
+======= Coin.sol:Coin =======
+EVM assembly:
+    /* "Coin.sol":1298:3200  contract Coin is Owned {... */
+  mstore(0x40, 0x80)
+    /* "Coin.sol":1766:1823  constructor() public {... */
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "Coin.sol":1766:1823  constructor() public {... */
+  pop
+    /* "Coin.sol":1806:1816  msg.sender */
+  caller
+    /* "Coin.sol":1797:1803  master */
+  0x02
+  0x00
+    /* "Coin.sol":1797:1816  master = msg.sender */
+  0x0100
+  exp
+  dup2
+  sload
+  dup2
+  0xffffffffffffffffffffffffffffffffffffffff
+  mul
+  not
+  and
+  swap1
+  dup4
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  mul
+  or
+  swap1
+  sstore
+  pop
+    /* "Coin.sol":1298:3200  contract Coin is Owned {... */
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "Coin.sol":1298:3200  contract Coin is Owned {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x04))
+      calldataload(0x00)
+      0x0100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      dup1        // fhash fhash
+      0x8b752bb0  // hash="2339711920" fhash="1086394137" fhash
+      gt          // 1 fhash
+      tag_12      // tag12 1 fhash
+      jumpi       // fhash
+      dup1
+      0x8b752bb0
+      eq
+      tag_7
+      jumpi
+      dup1
+      0x9e75143c
+      eq
+      tag_8
+      jumpi
+      dup1
+      0xd0679d34
+      eq
+      tag_9
+      jumpi
+      dup1
+      0xee97f7f3
+      eq
+      tag_10
+      jumpi
+      dup1
+      0xf00cab43
+      eq
+      tag_11
+      jumpi
+      jump(tag_1)
+    tag_12:
+      dup1        // fhash fhash
+      0x27e235e3  // ...
+      eq
+      tag_2
+      jumpi
+      dup1
+      0x2f54bf6e
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x40c10f19  // hash fhash fhash
+      eq          // 1 fhash
+      tag_4       // tag4 1 fhash
+      jumpi       // fhash
+      dup1
+      0x6c46a2c5
+      eq
+      tag_5
+      jumpi
+      dup1
+      0x7362377b
+      eq
+      tag_6
+      jumpi
+    tag_1:
+      stop
+        /* "Coin.sol":1593:1634  mapping (address => uint) public balances */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_15
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_15:
+        /* "Coin.sol":1593:1634  mapping (address => uint) public balances */
+      pop
+      tag_16
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_17
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_17:
+        /* "Coin.sol":1593:1634  mapping (address => uint) public balances */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_18
+      jump	// in
+    tag_16:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+    tag_3:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_19
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_19:
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+      pop
+      tag_20
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_21
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_21:
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_22
+      jump	// in
+    tag_20:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":2208:2729  function mint(address receiver, uint amount) public onlyOwner {... */
+    tag_4:
+      callvalue   // 0 fhash
+        /* "--CODEGEN--":8:17   */
+      dup1        // 0 0 fhash
+        /* "--CODEGEN--":5:7   */
+      iszero      // 1 0 fhash
+      tag_23      // tag23 1 0 fhash
+      jumpi       // 0 fhash
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_23:
+        /* "Coin.sol":2208:2729  function mint(address receiver, uint amount) public onlyOwner {... */
+      pop           // fhash
+      tag_24        // tag24 fhash
+      0x04          // 4 tag24 fhash
+      dup1          // 4 4 tag24 fhash
+      calldatasize  // cdsize 4 4 tag24 fhash
+      sub           // (cdsize - 4) 4 tag24 fhash
+        /* "--CODEGEN--":13:15   */
+      0x40          // 64 (cdsize - 4) 4 tag24 fhash
+        /* "--CODEGEN--":8:11   */
+      dup2          // (cdsize - 4) 64 (cdsize - 4) 4 tag24 fhash
+        /* "--CODEGEN--":5:16   */
+      lt            // 0 (cdsize - 4) 4 tag24 fhash
+        /* "--CODEGEN--":2:4   */
+      iszero        // 1 (cdsize - 4) 4 tag24 fhash
+      tag_25        // tag25 1 (cdsize - 4) 4 tag24 fhash
+      jumpi         // (cdsize - 4) 4 tag24 fhash
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_25:
+        /* "Coin.sol":2208:2729  function mint(address receiver, uint amount) public onlyOwner {... */
+      dup2          // 4 (cdsize - 4) 4 tag24 fhash
+      add           // cdsize 4 tag24 fhash
+      swap1         // 4 cdsize tag24 fhash
+      dup1          // 4 4 cdsize tag24 fhash
+      dup1          // 4 4 4 cdsize tag24 fhash
+      calldataload  // receiver 4 4 cdsize tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff  
+      and           // receiver 4 4 cdsize tag24 fhash
+      swap1         // 4 receiver 4 cdsize tag24 fhash
+      0x20          // 32 4 receiver 4 cdsize tag24 fhash
+      add           // 36 receiver 4 cdsize tag24 fhash
+      swap1         // receiver 36 4 cdsize tag24 fhash
+      swap3         // cdsize 36 4 receiver tag24 fhash
+      swap2         // 4 36 cdsize receiver tag24 fhash
+      swap1         // 36 4 cdsize receiver tag24 fhash
+      dup1          // 36 36 4 cdsize receiver tag24 fhash
+      calldataload  // amount 36 4 cdsize receiver tag24 fhash
+      swap1         // 36 amount 4 cdsize receiver tag24 fhash
+      0x20          // 32 36 amount 4 cdsize receiver tag24 fhash
+      add           // 68 amount 4 cdsize receiver tag24 fhash
+      swap1         // amount 68 4 cdsize receiver tag24 fhash
+      swap3         // cdsize 68 4 amount receiver tag24 fhash
+      swap2         // 4 68 cdsize amount receiver tag24 fhash
+      swap1         // 68 4 cdsize amount receiver tag24 fhash
+      pop           
+      pop
+      pop
+      tag_26        // tag26 amount receiver tag24 fhash 
+      jump	// in   // amount receiver tag24 fhash
+    tag_24:
+      stop // yay!
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+    tag_5:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_27
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_27:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      pop
+      tag_28
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_29
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_29:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+        /* "--CODEGEN--":21:32   */
+      0x0100000000
+        /* "--CODEGEN--":8:19   */
+      dup2
+        /* "--CODEGEN--":5:33   */
+      gt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_30
+      jumpi
+        /* "--CODEGEN--":46:47   */
+      0x00
+        /* "--CODEGEN--":43:44   */
+      dup1
+        /* "--CODEGEN--":36:48   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_30:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      dup3
+      add
+        /* "--CODEGEN--":35:44   */
+      dup4
+        /* "--CODEGEN--":28:32   */
+      0x20
+        /* "--CODEGEN--":12:26   */
+      dup3
+        /* "--CODEGEN--":8:33   */
+      add
+        /* "--CODEGEN--":5:45   */
+      gt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_31
+      jumpi
+        /* "--CODEGEN--":58:59   */
+      0x00
+        /* "--CODEGEN--":55:56   */
+      dup1
+        /* "--CODEGEN--":48:60   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_31:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap2
+        /* "--CODEGEN--":101:110   */
+      dup5
+        /* "--CODEGEN--":95:97   */
+      0x20
+        /* "--CODEGEN--":81:93   */
+      dup4
+        /* "--CODEGEN--":77:98   */
+      mul
+        /* "--CODEGEN--":67:75   */
+      dup5
+        /* "--CODEGEN--":63:99   */
+      add
+        /* "--CODEGEN--":60:111   */
+      gt
+        /* "--CODEGEN--":39:50   */
+      0x0100000000
+        /* "--CODEGEN--":25:37   */
+      dup4
+        /* "--CODEGEN--":22:51   */
+      gt
+        /* "--CODEGEN--":11:119   */
+      or
+        /* "--CODEGEN--":8:10   */
+      iszero
+      tag_32
+      jumpi
+        /* "--CODEGEN--":132:133   */
+      0x00
+        /* "--CODEGEN--":129:130   */
+      dup1
+        /* "--CODEGEN--":122:134   */
+      revert
+        /* "--CODEGEN--":8:10   */
+    tag_32:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      swap2
+      swap1
+      dup1
+      dup1
+      0x20
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap4
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      dup4
+      0x20
+      mul
+        /* "--CODEGEN--":30:33   */
+      dup1
+        /* "--CODEGEN--":22:28   */
+      dup3
+        /* "--CODEGEN--":14:20   */
+      dup5
+        /* "--CODEGEN--":1:34   */
+      calldatacopy
+        /* "--CODEGEN--":99:100   */
+      0x00
+        /* "--CODEGEN--":93:96   */
+      dup2
+        /* "--CODEGEN--":85:91   */
+      dup5
+        /* "--CODEGEN--":81:97   */
+      add
+        /* "--CODEGEN--":74:101   */
+      mstore
+        /* "--CODEGEN--":137:141   */
+      0x1f
+        /* "--CODEGEN--":133:142   */
+      not
+        /* "--CODEGEN--":126:130   */
+      0x1f
+        /* "--CODEGEN--":121:124   */
+      dup3
+        /* "--CODEGEN--":117:131   */
+      add
+        /* "--CODEGEN--":113:143   */
+      and
+        /* "--CODEGEN--":106:143   */
+      swap1
+      pop
+        /* "--CODEGEN--":169:172   */
+      dup1
+        /* "--CODEGEN--":161:167   */
+      dup4
+        /* "--CODEGEN--":157:173   */
+      add
+        /* "--CODEGEN--":147:173   */
+      swap3
+      pop
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      pop
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap2
+      swap3
+      swap2
+      swap3
+      swap1
+      pop
+      pop
+      pop
+      tag_33
+      jump	// in
+    tag_28:
+      stop
+        /* "Coin.sol":3097:3198  function withdrawEther() public onlyOwner {... */
+    tag_6:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_34
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_34:
+        /* "Coin.sol":3097:3198  function withdrawEther() public onlyOwner {... */
+      pop
+      tag_35
+      tag_36
+      jump	// in
+    tag_35:
+      stop
+        /* "Coin.sol":1640:1703  mapping (address => mapping (address => uint256)) public minted */
+    tag_7:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_37
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_37:
+        /* "Coin.sol":1640:1703  mapping (address => mapping (address => uint256)) public minted */
+      pop
+      tag_38
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x40
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_39
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_39:
+        /* "Coin.sol":1640:1703  mapping (address => mapping (address => uint256)) public minted */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_40
+      jump	// in
+    tag_38:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":1440:1463  bool public placeholder */
+    tag_8:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_41
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_41:
+        /* "Coin.sol":1440:1463  bool public placeholder */
+      pop
+      tag_42
+      tag_43
+      jump	// in
+    tag_42:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":2735:3043  function send(address receiver, uint amount) public {... */
+    tag_9:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_44
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_44:
+        /* "Coin.sol":2735:3043  function send(address receiver, uint amount) public {... */
+      pop
+      tag_45
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x40
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_46
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_46:
+        /* "Coin.sol":2735:3043  function send(address receiver, uint amount) public {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_47
+      jump	// in
+    tag_45:
+      stop
+        /* "Coin.sol":1399:1420  address public master */
+    tag_10:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_48
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_48:
+        /* "Coin.sol":1399:1420  address public master */
+      pop
+      tag_49
+      tag_50
+      jump	// in
+    tag_49:
+      mload(0x40)
+      dup1
+      dup3
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+    tag_11:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_51
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_51:
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+      pop
+      tag_52
+      tag_53
+      jump	// in
+    tag_52:
+      mload(0x40)
+      dup1
+      dup3
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":1593:1634  mapping (address => uint) public balances */
+    tag_18:
+      mstore(0x20, 0x03)
+      dup1
+      0x00
+      mstore
+      keccak256(0x00, 0x40)
+      0x00
+      swap2
+      pop
+      swap1
+      pop
+      sload
+      dup2
+      jump	// out
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+    tag_22:
+        /* "Coin.sol":1105:1109  bool */
+      0x00     // 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":522:525  0x1 */
+      0x01     // 1 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1128:1145  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and      // 1 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1128:1133  owner */
+      dup3     // msg.sender 1 0 msg.sender tag57 amount receiver tag24 fhash 
+        /* "Coin.sol":1128:1145  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // msg.sender 1 0 msg.sender tag57 amount receiver tag24 fhash
+      eq      // 0 0 msg.sender tag57 amount receiver tag24 fhash
+      iszero  // 1 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1128:1176  owner != SENTINEL && owners[owner] != address(0) */
+      dup1    // 1 1 0 msg.sender tag57 amount receiver tag24 fhash
+      iszero  // 0 1 0 msg.sender tag57 amount receiver tag24 fhash
+      tag_55  // tag55 0 1 0 msg.sender tag57 amount receiver tag24 fhash
+      jumpi   // 1 0 msg.sender tag57 amount receiver tag24 fhash
+      pop     // 0 msg.sender tag57 amount receiver tag24 fhash 
+        /* "Coin.sol":1174:1175  0 */
+      0x00    // 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1149:1176  owners[owner] != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1149:1155  owners */
+      0x00   // 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1149:1162  owners[owner] */
+      dup1   // 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1156:1161  owner */
+      dup5   // msg.sender 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1149:1162  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // msg.sender 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // msg.sender 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      dup2   // 0 msg.sender 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      mstore // 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash               // M[0 <- msg.sender]
+      0x20   // 32 0 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      add    // 32 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      swap1  // 0 32 0 0 msg.sender tag57 amount receiver tag24 fhash
+      dup2   // 32 0 32 0 0 msg.sender tag57 amount receiver tag24 fhash
+      mstore // 32 0 0 msg.sender tag57 amount receiver tag24 fhash                // M[32 <- 0]
+      0x20   // 32 32 0 0 msg.sender tag57 amount receiver tag24 fhash
+      add    // 64 0 0 msg.sender tag57 amount receiver tag24 fhash
+      0x00   // 0 64 0 0 msg.sender tag57 amount receiver tag24 fhash
+      keccak256 // hash(msg.sender ++ 0..0) 0 0 msg.sender tag57 amount receiver tag24 fhash
+      0x00      // 0 hash(msg.sender ++ 0..0) 0 0 msg.sender tag57 amount receiver tag24 fhash
+      swap1     // hash(msg.sender ++ 0..0) 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      sload     // owner[msg.sender] 0 0 0 msg.sender tag57 amount receiver tag24 fhash
+      swap1     // 0 owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+      0x0100    // 256 0 owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+      exp       // 1 owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+      swap1     // owner[msg.sender] 1 0 0 msg.sender tag57 amount receiver tag24 fhash
+      div       // owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and       // owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1149:1176  owners[owner] != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and       // owner[msg.sender] 0 0 msg.sender tag57 amount receiver tag24 fhash
+      eq        // 0 0 msg.sender tag57 amount receiver tag24 fhash
+      iszero    // 1 0 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1128:1176  owner != SENTINEL && owners[owner] != address(0) */
+    tag_55:
+        /* "Coin.sol":1121:1176  return owner != SENTINEL && owners[owner] != address(0) */
+      swap1     // 0 1 msg.sender tag57 amount receiver tag24 fhash
+      pop       // 1 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+      swap2     // tag57 msg.sender 1 amount receiver tag24 fhash
+      swap1     // msg.sender tag57 1 amount receiver tag24 fhash
+      pop       // tag57 1 amount receiver tag24 fhash
+      jump	// out  // 1 amount receiver tag24 fhash
+        /* "Coin.sol":2208:2729  function mint(address receiver, uint amount) public onlyOwner {... */
+    tag_26:
+        /* "Coin.sol":1228:1247  isOwner(msg.sender) */
+      tag_57  // tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1236:1246  msg.sender */
+      caller  // msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1228:1235  isOwner */
+      tag_22  // tag22 msg.sender tag57 amount receiver tag24 fhash
+        /* "Coin.sol":1228:1247  isOwner(msg.sender) */
+      jump	// in  // msg.sender tag57 amount receiver tag24 fhash
+    tag_57:
+        /* "Coin.sol":1220:1275  require(isOwner(msg.sender), "Only allowed for owners") */
+      iszero       // 0 amount receiver tag24 fhash
+      iszero       // 1 amount receiver tag24 fhash
+      tag_58       // tag58 1 amount receiver tag24 fhash 
+      jumpi        // amount receiver tag24 fhash 
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x17
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x4f6e6c7920616c6c6f77656420666f72206f776e657273000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_58:
+        /* "Coin.sol":2387:2417  balances[receiver].add(amount) */
+      tag_60  // tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2410:2416  amount */
+      dup2    // amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2387:2395  balances */
+      0x03    // 3 amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2387:2405  balances[receiver] */
+      0x00    // 0 3 amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2396:2404  receiver */
+      dup6    // receiver 0 3 amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2387:2405  balances[receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // receiver 0 3 amount tag60 amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and        // receiver 0 3 amount tag60 amount receiver tag24 fhash
+      dup2       // 0 receiver 0 3 amount tag60 amount receiver tag24 fhash
+      mstore     // 0 3 amount tag60 amount receiver tag24 fhash              // M[0 <- receiver]
+      0x20       // 32 0 3 amount tag60 amount receiver tag24 fhash
+      add        // 32 3 amount tag60 amount receiver tag24 fhash
+      swap1      // 3 32 amount tag60 amount receiver tag24 fhash
+      dup2       // 32 3 32 amount tag60 amount receiver tag24 fhash
+      mstore     // 32 amount tag60 amount receiver tag24 fhash               // M[32 <- 3]  
+      0x20       // 32 32 amount tag60 amount receiver tag24 fhash
+      add        // 64 amount tag60 amount receiver tag24 fhash
+      0x00       // 0 64 amount tag60 amount receiver tag24 fhash
+      keccak256  // hash(receiver ++ 00..3) amount tag60 amount receiver tag24 fhash
+      sload      // balances[receiver] amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2387:2409  balances[receiver].add */
+      tag_61     // tag61 balances[receiver] amount tag60 amount receiver tag24 fhash 
+      swap1      // balances[receiver] tag61 amount tag60 amount receiver tag24 fhash
+        /* "Coin.sol":2387:2417  balances[receiver].add(amount) */
+      swap2      // amount tag61 balances[receiver] tag60 amount receiver tag24 fhash
+      swap1      // tag61 amount balances[receiver] tag60 amount receiver tag24 fhash
+      0xffffffff // 
+      and        // tag61 amount balances[receiver] tag60 amount receiver tag24 fhash
+      jump	// in  // amount balances[receiver] tag60 amount receiver tag24 fhash
+    tag_60:
+        /* "Coin.sol":2366:2374  balances */
+      0x03   // 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2366:2384  balances[receiver] */
+      0x00   // 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2375:2383  receiver */
+      dup5   // receiver 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2366:2384  balances[receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // receiver 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // receiver 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 0 receiver 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+      mstore // 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash               // M[0 <- receiver]
+      0x20   // 32 0 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+      add    // 32 3 (balances[receiver] +  amount) amount receiver tag24 fhash
+      swap1  // 3 32 (balances[receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 32 3 32 (balances[receiver] +  amount) amount receiver tag24 fhash
+      mstore // 32 (balances[receiver] +  amount) amount receiver tag24 fhash                // M[32 <- 3]
+      0x20   // 32 32 (balances[receiver] +  amount) amount receiver tag24 fhash
+      add    // 64 (balances[receiver] +  amount) amount receiver tag24 fhash
+      0x00   // 0 64 (balances[receiver] +  amount) amount receiver tag24 fhash
+      keccak256 // hash(receiver ++ 00..3) (balances[receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2366:2417  balances[receiver] = balances[receiver].add(amount) */
+      dup2    // (balances[receiver] +  amount) hash(receiver ++ 00..3) (balances[receiver] +  amount) amount receiver tag24 fhash
+      swap1   // hash(receiver ++ 00..3) (balances[receiver] +  amount) (balances[receiver] +  amount) amount receiver tag24 fhash
+      sstore  // (balances[receiver] +  amount) amount receiver tag24 fhash                 // S[hash(receiver ++ 00..3) <- (balances[receiver] +  amount)]
+      pop     // amount receiver tag24 fhash
+        /* "Coin.sol":2682:2722  minted[msg.sender][receiver].add(amount) */
+      tag_62  // tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2715:2721  amount */
+      dup2    // amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2688  minted */
+      0x04    // 4 amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2700  minted[msg.sender] */
+      0x00    // 0 4 amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2689:2699  msg.sender */
+      caller  // msg.sender 0 4 amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2700  minted[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // msg.sender 0 4 amount tag62 amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // msg.sender 0 4 amount tag62 amount receiver tag24 fhash
+      dup2    // 0 msg.sender 0 4 amount tag62 amount receiver tag24 fhash
+      mstore  // 0 4 amount tag62 amount receiver tag24 fhash                // M[0 <- msg.sender]
+      0x20    // 32 0 4 amount tag62 amount receiver tag24 fhash
+      add     // 32 4 amount tag62 amount receiver tag24 fhash
+      swap1   // 4 32 amount tag62 amount receiver tag24 fhash
+      dup2    // 32 4 32 amount tag62 amount receiver tag24 fhash
+      mstore  // 32 amount tag62 amount receiver tag24 fhash                 // M[32 <- 4]
+      0x20    // 32 32 amount tag62 amount receiver tag24 fhash
+      add     // 64 amount tag62 amount receiver tag24 fhash
+      0x00    // 0 64 amount tag62 amount receiver tag24 fhash
+      keccak256  // hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2710  minted[msg.sender][receiver] */
+      0x00    // 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2701:2709  receiver */
+      dup6    // receiver 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2710  minted[msg.sender][receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // receiver 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     // receiver 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+      dup2    // 0 receiver 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+      mstore  // 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash      // M[0 <- receiver]
+      0x20    // 32 0 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+      add     // 32 hash(msg.sender ++ 00..4) amount tag62 amount receiver tag24 fhash
+      swap1   // hash(msg.sender ++ 00..4) 32 amount tag62 amount receiver tag24 fhash
+      dup2    // 32 hash(msg.sender ++ 00..4) 32 amount tag62 amount receiver tag24 fhash
+      mstore  // 32 amount tag62 amount receiver tag24 fhash                               // M[32 <- hash(msg.sender ++ 00..4)]
+      0x20    // 32 32 amount tag62 amount receiver tag24 fhash
+      add     // 64 amount tag62 amount receiver tag24 fhash
+      0x00    // 0 64 amount tag62 amount receiver tag24 fhash
+      keccak256  // hash(receiver ++ hash(msg.sender ++ 00..4)) amount tag62 amount receiver tag24 fhash
+      sload   // minted[msg.sender][receiver] amount tag62 amount receiver tag24 fhash 
+        /* "Coin.sol":2682:2714  minted[msg.sender][receiver].add */
+      tag_61  // tag61 minted[msg.sender][receiver] amount tag62 amount receiver tag24 fhash
+      swap1   // minted[msg.sender][receiver] tag61 amount tag62 amount receiver tag24 fhash
+        /* "Coin.sol":2682:2722  minted[msg.sender][receiver].add(amount) */
+      swap2   // amount tag61 minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      swap1   // tag61 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      0xffffffff
+      and     // tag61 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      jump	// in // amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+    tag_62:
+        /* "Coin.sol":2651:2657  minted */
+      0x04   // 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash 
+        /* "Coin.sol":2651:2669  minted[msg.sender] */
+      0x00   // 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2658:2668  msg.sender */
+      caller // msg.sender 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2651:2669  minted[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // msg.sender 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // msg.sender 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 0 msg.sender 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      mstore // 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash         // M[0 <- msg.sender]
+      0x20   // 32 0 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      add    // 32 4 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      swap1  // 4 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 32 4 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash 
+      mstore // 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash          // M[32 <- 4]
+      0x20   // 32 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      add    // 64 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      0x00   // 0 64 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      keccak256 // hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2651:2679  minted[msg.sender][receiver] */
+      0x00   // 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2670:2678  receiver */
+      dup5   // receiver 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2651:2679  minted[msg.sender][receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // receiver 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      0xffffffffffffffffffffffffffffffffffffffff
+      and    // receiver 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 0 receiver 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      mstore // 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash     // M[0 <- receiver]
+      0x20   // 32 0 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      add    // 32 hash(msg.sender ++ 00..4) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      swap1  // hash(msg.sender ++ 00..4) 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      dup2   // 32 hash(msg.sender ++ 00..4) 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      mstore // 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash                              // M[32 <- hash(msg.sender ++ 00..4)]
+      0x20   // 32 32 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      add    // 64 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      0x00   // 0 64 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      keccak256 // hash(receiver ++ hash(msg.sender ++ 00..4)) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":2651:2722  minted[msg.sender][receiver] = minted[msg.sender][receiver].add(amount) */
+      dup2   // (minted[msg.sender][receiver] + amount) hash(receiver ++ hash(msg.sender ++ 00..4)) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      swap1  // hash(receiver ++ hash(msg.sender ++ 00..4)) (minted[msg.sender][receiver] + amount) (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      sstore  // (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash          // S[hash(receiver ++ hash(msg.sender ++ 00..4)) <- (minted[msg.sender][receiver] + amount)]
+      pop     // amount receiver tag24 fhash
+        /* "Coin.sol":2208:2729  function mint(address receiver, uint amount) public onlyOwner {... */
+      pop     // receiver tag24 fhash
+      pop     // tag24 fhash
+      jump	// out  // tag24 fhash
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+    tag_33:
+        /* "Coin.sol":2133:2139  master */
+      0x02
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":2119:2139  msg.sender == master */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":2119:2129  msg.sender */
+      caller
+        /* "Coin.sol":2119:2139  msg.sender == master */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "Coin.sol":2111:2140  require(msg.sender == master) */
+      iszero
+      iszero
+      tag_64
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_64:
+        /* "Coin.sol":2170:2194  super.addOwners(_owners) */
+      tag_65
+        /* "Coin.sol":2186:2193  _owners */
+      dup2
+        /* "Coin.sol":2170:2185  super.addOwners */
+      tag_66
+        /* "Coin.sol":2170:2194  super.addOwners(_owners) */
+      jump	// in
+    tag_65:
+        /* "Coin.sol":1829:2201  function addOwners(address[] memory _owners) public {... */
+      pop
+      jump	// out
+        /* "Coin.sol":3097:3198  function withdrawEther() public onlyOwner {... */
+    tag_36:
+        /* "Coin.sol":1228:1247  isOwner(msg.sender) */
+      tag_68
+        /* "Coin.sol":1236:1246  msg.sender */
+      caller
+        /* "Coin.sol":1228:1235  isOwner */
+      tag_22
+        /* "Coin.sol":1228:1247  isOwner(msg.sender) */
+      jump	// in
+    tag_68:
+        /* "Coin.sol":1220:1275  require(isOwner(msg.sender), "Only allowed for owners") */
+      iszero
+      iszero
+      tag_69
+      jumpi
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x17
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x4f6e6c7920616c6c6f77656420666f72206f776e657273000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_69:
+        /* "Coin.sol":3149:3159  msg.sender */
+      caller
+        /* "Coin.sol":3149:3168  msg.sender.transfer */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":3149:3191  msg.sender.transfer(address(this).balance) */
+      0x08fc
+        /* "Coin.sol":3177:3181  this */
+      address
+        /* "Coin.sol":3169:3190  address(this).balance */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      balance
+        /* "Coin.sol":3149:3191  msg.sender.transfer(address(this).balance) */
+      swap1
+      dup2
+      iszero
+      mul
+      swap1
+      mload(0x40)
+      0x00
+      mload(0x40)
+      dup1
+      dup4
+      sub
+      dup2
+      dup6
+      dup9
+      dup9
+      call
+      swap4
+      pop
+      pop
+      pop
+      pop
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_71
+      jumpi
+        /* "--CODEGEN--":45:61   */
+      returndatasize
+        /* "--CODEGEN--":42:43   */
+      0x00
+        /* "--CODEGEN--":39:40   */
+      dup1
+        /* "--CODEGEN--":24:62   */
+      returndatacopy
+        /* "--CODEGEN--":77:93   */
+      returndatasize
+        /* "--CODEGEN--":74:75   */
+      0x00
+        /* "--CODEGEN--":67:94   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_71:
+        /* "Coin.sol":3149:3191  msg.sender.transfer(address(this).balance) */
+      pop
+        /* "Coin.sol":3097:3198  function withdrawEther() public onlyOwner {... */
+      jump	// out
+        /* "Coin.sol":1640:1703  mapping (address => mapping (address => uint256)) public minted */
+    tag_40:
+      mstore(0x20, 0x04)
+      dup2
+      0x00
+      mstore
+      mstore(0x20, keccak256(0x00, 0x40))
+      dup1
+      0x00
+      mstore
+      keccak256(0x00, 0x40)
+      0x00
+      swap2
+      pop
+      swap2
+      pop
+      pop
+      sload
+      dup2
+      jump	// out
+        /* "Coin.sol":1440:1463  bool public placeholder */
+    tag_43:
+      0x02
+      0x14
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xff
+      and
+      dup2
+      jump	// out
+        /* "Coin.sol":2735:3043  function send(address receiver, uint amount) public {... */
+    tag_47:
+        /* "Coin.sol":2815:2823  balances */
+      0x03
+        /* "Coin.sol":2815:2835  balances[msg.sender] */
+      0x00
+        /* "Coin.sol":2824:2834  msg.sender */
+      caller
+        /* "Coin.sol":2815:2835  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      sload
+        /* "Coin.sol":2805:2811  amount */
+      dup2
+        /* "Coin.sol":2805:2835  amount <= balances[msg.sender] */
+      gt
+      iszero
+        /* "Coin.sol":2797:2861  require(amount <= balances[msg.sender], "Insufficient balance.") */
+      iszero
+      iszero
+      tag_73
+      jumpi
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x15
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x496e73756666696369656e742062616c616e63652e0000000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_73:
+        /* "Coin.sol":2894:2926  balances[msg.sender].sub(amount) */
+      tag_74
+        /* "Coin.sol":2919:2925  amount */
+      dup2
+        /* "Coin.sol":2894:2902  balances */
+      0x03
+        /* "Coin.sol":2894:2914  balances[msg.sender] */
+      0x00
+        /* "Coin.sol":2903:2913  msg.sender */
+      caller
+        /* "Coin.sol":2894:2914  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      sload
+        /* "Coin.sol":2894:2918  balances[msg.sender].sub */
+      tag_75
+      swap1
+        /* "Coin.sol":2894:2926  balances[msg.sender].sub(amount) */
+      swap2
+      swap1
+      0xffffffff
+      and
+      jump	// in
+    tag_74:
+        /* "Coin.sol":2871:2879  balances */
+      0x03
+        /* "Coin.sol":2871:2891  balances[msg.sender] */
+      0x00
+        /* "Coin.sol":2880:2890  msg.sender */
+      caller
+        /* "Coin.sol":2871:2891  balances[msg.sender] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+        /* "Coin.sol":2871:2926  balances[msg.sender] = balances[msg.sender].sub(amount) */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":2957:2987  balances[receiver].add(amount) */
+      tag_76
+        /* "Coin.sol":2980:2986  amount */
+      dup2
+        /* "Coin.sol":2957:2965  balances */
+      0x03
+        /* "Coin.sol":2957:2975  balances[receiver] */
+      0x00
+        /* "Coin.sol":2966:2974  receiver */
+      dup6
+        /* "Coin.sol":2957:2975  balances[receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      sload
+        /* "Coin.sol":2957:2979  balances[receiver].add */
+      tag_61
+      swap1
+        /* "Coin.sol":2957:2987  balances[receiver].add(amount) */
+      swap2
+      swap1
+      0xffffffff
+      and
+      jump	// in
+    tag_76:
+        /* "Coin.sol":2936:2944  balances */
+      0x03
+        /* "Coin.sol":2936:2954  balances[receiver] */
+      0x00
+        /* "Coin.sol":2945:2953  receiver */
+      dup5
+        /* "Coin.sol":2936:2954  balances[receiver] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+        /* "Coin.sol":2936:2987  balances[receiver] = balances[receiver].add(amount) */
+      dup2
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":3002:3036  Sent(msg.sender, receiver, amount) */
+      0x3990db2d31862302a685e8086b5755072a6e2b5b780af1ee81ece35ee3cd3345
+        /* "Coin.sol":3007:3017  msg.sender */
+      caller
+        /* "Coin.sol":3019:3027  receiver */
+      dup4
+        /* "Coin.sol":3029:3035  amount */
+      dup4
+        /* "Coin.sol":3002:3036  Sent(msg.sender, receiver, amount) */
+      mload(0x40)
+      dup1
+      dup5
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap4
+      pop
+      pop
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log1
+        /* "Coin.sol":2735:3043  function send(address receiver, uint amount) public {... */
+      pop
+      pop
+      jump	// out
+        /* "Coin.sol":1399:1420  address public master */
+    tag_50:
+      0x02
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      jump	// out
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+    tag_53:
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+      dup2
+      jump	// out
+        /* "Coin.sol":54:198  function add(uint256 a, uint256 b) internal pure returns (uint256) {... */
+    tag_61:
+        /* "Coin.sol":112:119  uint256 */
+      0x00  //first:   0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":131:140  uint256 c */
+      dup1  //first:   0 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  0 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":147:148  b */
+      dup3  //first:   amount 0 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  amount 0 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":143:144  a */
+      dup5  //first:   balances[receiver] amount 0 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  minted[msg.sender][receiver] amount 0 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":143:148  a + b */
+      add   //first:   (balances[receiver] +  amount) 0 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  (minted[msg.sender][receiver] +  amount) 0 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":131:148  uint256 c = a + b */
+      swap1 //first:   0 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  0 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      pop   //first:   (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":171:172  a */
+      dup4  //first:   balances[receiver] (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  minted[msg.sender][receiver] (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":166:167  c */
+      dup2  //first:   (balances[receiver] + amount) balances[receiver] (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+            //second:  (minted[msg.sender][receiver] +  amount) minted[msg.sender][receiver] (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":166:172  c >= a */
+      lt      //first:   0 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  0 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      iszero  //first:   1 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  1 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":158:173  require(c >= a) */
+      iszero  //first:   0 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  0 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      iszero  //first:   1 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  1 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      tag_78  //first:   tag78 1 (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  tag78 1 (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      jumpi   //first:   (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      0x00
+      dup1
+      revert
+    tag_78:
+        /* "Coin.sol":190:191  c */
+      dup1    //first:   (balances[receiver] +  amount) (balances[receiver] +  amount) 0 amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  (minted[msg.sender][receiver] +  amount) (minted[msg.sender][receiver] +  amount) 0 amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+        /* "Coin.sol":183:191  return c */
+      swap2   //first:   0 (balances[receiver] +  amount) (balances[receiver] +  amount) amount balances[receiver] tag60 amount receiver tag24 fhash
+              //second:  0 (minted[msg.sender][receiver] +  amount) (minted[msg.sender][receiver] +  amount) amount minted[msg.sender][receiver] tag62 amount receiver tag24 fhash
+      pop
+      pop
+        /* "Coin.sol":54:198  function add(uint256 a, uint256 b) internal pure returns (uint256) {... */
+      swap3  //first:   tag60 amount balances[receiver] (balances[receiver] +  amount) amount receiver tag24 fhash
+             //second:  tag62 amount minted[msg.sender][receiver] (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      swap2  //first:   balances[receiver] amount tag60 (balances[receiver] +  amount) amount receiver tag24 fhash
+             //second:  minted[msg.sender][receiver] amount tag62 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      pop    
+      pop   //first:   tag60 (balances[receiver] +  amount) amount receiver tag24 fhash
+            //second:  tag62 (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+      jump	// out  //first:   (balances[receiver] +  amount) amount receiver tag24 fhash
+                    //second:  (minted[msg.sender][receiver] +  amount) amount receiver tag24 fhash
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+    tag_66:
+        /* "Coin.sol":600:609  uint256 i */
+      0x00
+        /* "Coin.sol":612:613  0 */
+      dup1
+        /* "Coin.sol":600:613  uint256 i = 0 */
+      swap1
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+    tag_80:
+        /* "Coin.sol":619:626  _owners */
+      dup2
+        /* "Coin.sol":619:633  _owners.length */
+      mload
+        /* "Coin.sol":615:616  i */
+      dup2
+        /* "Coin.sol":615:633  i < _owners.length */
+      lt
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      iszero
+      tag_81
+      jumpi
+        /* "Coin.sol":654:667  address owner */
+      0x00
+        /* "Coin.sol":670:677  _owners */
+      dup3
+        /* "Coin.sol":678:679  i */
+      dup3
+        /* "Coin.sol":670:680  _owners[i] */
+      dup2
+      mload
+      dup2
+      lt
+      iszero
+      iszero
+      tag_83
+      jumpi
+      invalid
+    tag_83:
+      swap1
+      0x20
+      add
+      swap1
+      0x20
+      mul
+      add
+      mload
+        /* "Coin.sol":654:680  address owner = _owners[i] */
+      swap1
+      pop
+        /* "Coin.sol":719:720  0 */
+      0x00
+        /* "Coin.sol":702:721  owner != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":702:707  owner */
+      dup2
+        /* "Coin.sol":702:721  owner != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":702:742  owner != address(0) && owner != SENTINEL */
+      dup1
+      iszero
+      tag_84
+      jumpi
+      pop
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":725:742  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":725:730  owner */
+      dup2
+        /* "Coin.sol":725:742  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":702:742  owner != address(0) && owner != SENTINEL */
+    tag_84:
+        /* "Coin.sol":702:773  owner != address(0) && owner != SENTINEL && owners[owner] == address(0) */
+      dup1
+      iszero
+      tag_85
+      jumpi
+      pop
+        /* "Coin.sol":771:772  0 */
+      0x00
+        /* "Coin.sol":746:773  owners[owner] == address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":746:752  owners */
+      0x00
+        /* "Coin.sol":746:759  owners[owner] */
+      dup1
+        /* "Coin.sol":753:758  owner */
+      dup4
+        /* "Coin.sol":746:759  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":746:773  owners[owner] == address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "Coin.sol":702:773  owner != address(0) && owner != SENTINEL && owners[owner] == address(0) */
+    tag_85:
+        /* "Coin.sol":694:819  require(owner != address(0) && owner != SENTINEL && owners[owner] == address(0),... */
+      iszero
+      iszero
+      tag_86
+      jumpi
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x15
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x496e76616c6964206f776e657220616464726573730000000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_86:
+        /* "Coin.sol":937:943  owners */
+      0x00
+        /* "Coin.sol":937:953  owners[SENTINEL] */
+      dup1
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":937:953  owners[SENTINEL] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":921:927  owners */
+      0x00
+        /* "Coin.sol":921:934  owners[owner] */
+      dup1
+        /* "Coin.sol":928:933  owner */
+      dup4
+        /* "Coin.sol":921:934  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "Coin.sol":921:953  owners[owner] = owners[SENTINEL] */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":986:991  owner */
+      dup1
+        /* "Coin.sol":967:973  owners */
+      0x00
+        /* "Coin.sol":967:983  owners[SENTINEL] */
+      dup1
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":967:983  owners[SENTINEL] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "Coin.sol":967:991  owners[SENTINEL] = owner */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      pop
+        /* "Coin.sol":635:638  i++ */
+      dup1
+      dup1
+      0x01
+      add
+      swap2
+      pop
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      jump(tag_80)
+    tag_81:
+      pop
+        /* "Coin.sol":1025:1032  _owners */
+      dup1
+        /* "Coin.sol":1025:1039  _owners.length */
+      mload
+        /* "Coin.sol":1011:1021  ownerCount */
+      0x01
+      0x00
+        /* "Coin.sol":1011:1039  ownerCount += _owners.length */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      pop
+      jump	// out
+        /* "Coin.sol":203:344  function sub(uint256 a, uint256 b) internal pure returns (uint256) {... */
+    tag_75:
+        /* "Coin.sol":261:268  uint256 */
+      0x00
+        /* "Coin.sol":292:293  a */
+      dup3
+        /* "Coin.sol":287:288  b */
+      dup3
+        /* "Coin.sol":287:293  b <= a */
+      gt
+      iszero
+        /* "Coin.sol":279:294  require(b <= a) */
+      iszero
+      iszero
+      tag_88
+      jumpi
+      0x00
+      dup1
+      revert
+    tag_88:
+        /* "Coin.sol":303:312  uint256 c */
+      0x00
+        /* "Coin.sol":319:320  b */
+      dup3
+        /* "Coin.sol":315:316  a */
+      dup5
+        /* "Coin.sol":315:320  a - b */
+      sub
+        /* "Coin.sol":303:320  uint256 c = a - b */
+      swap1
+      pop
+        /* "Coin.sol":336:337  c */
+      dup1
+        /* "Coin.sol":329:337  return c */
+      swap2
+      pop
+      pop
+        /* "Coin.sol":203:344  function sub(uint256 a, uint256 b) internal pure returns (uint256) {... */
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820b4adff410fc6a13f575895bff058d2598f125a59de97d5bbaa485dfb9c5134890029
+}
+
+
+======= Coin.sol:Owned =======
+EVM assembly:
+    /* "Coin.sol":348:1296  contract Owned {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x00
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "Coin.sol":348:1296  contract Owned {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x00
+  codecopy
+  0x00
+  return
+stop
+
+sub_0: assembly {
+        /* "Coin.sol":348:1296  contract Owned {... */
+      mstore(0x40, 0x80)
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_1
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x00
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_1:
+        /* "Coin.sol":348:1296  contract Owned {... */
+      pop
+      jumpi(tag_2, lt(calldatasize, 0x04))
+      calldataload(0x00)
+      0x0100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      dup1
+      0x2f54bf6e
+      eq
+      tag_3
+      jumpi
+      dup1
+      0x6c46a2c5
+      eq
+      tag_4
+      jumpi
+      dup1
+      0xf00cab43
+      eq
+      tag_5
+      jumpi
+    tag_2:
+      0x00
+      dup1
+      revert
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+    tag_3:
+      tag_6
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_7
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_7:
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      tag_8
+      jump	// in
+    tag_6:
+      mload(0x40)
+      dup1
+      dup3
+      iszero
+      iszero
+      iszero
+      iszero
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+    tag_4:
+      tag_9
+      0x04
+      dup1
+      calldatasize
+      sub
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_10
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x00
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_10:
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+        /* "--CODEGEN--":21:32   */
+      0x0100000000
+        /* "--CODEGEN--":8:19   */
+      dup2
+        /* "--CODEGEN--":5:33   */
+      gt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_11
+      jumpi
+        /* "--CODEGEN--":46:47   */
+      0x00
+        /* "--CODEGEN--":43:44   */
+      dup1
+        /* "--CODEGEN--":36:48   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_11:
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      dup3
+      add
+        /* "--CODEGEN--":35:44   */
+      dup4
+        /* "--CODEGEN--":28:32   */
+      0x20
+        /* "--CODEGEN--":12:26   */
+      dup3
+        /* "--CODEGEN--":8:33   */
+      add
+        /* "--CODEGEN--":5:45   */
+      gt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_12
+      jumpi
+        /* "--CODEGEN--":58:59   */
+      0x00
+        /* "--CODEGEN--":55:56   */
+      dup1
+        /* "--CODEGEN--":48:60   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_12:
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap2
+        /* "--CODEGEN--":101:110   */
+      dup5
+        /* "--CODEGEN--":95:97   */
+      0x20
+        /* "--CODEGEN--":81:93   */
+      dup4
+        /* "--CODEGEN--":77:98   */
+      mul
+        /* "--CODEGEN--":67:75   */
+      dup5
+        /* "--CODEGEN--":63:99   */
+      add
+        /* "--CODEGEN--":60:111   */
+      gt
+        /* "--CODEGEN--":39:50   */
+      0x0100000000
+        /* "--CODEGEN--":25:37   */
+      dup4
+        /* "--CODEGEN--":22:51   */
+      gt
+        /* "--CODEGEN--":11:119   */
+      or
+        /* "--CODEGEN--":8:10   */
+      iszero
+      tag_13
+      jumpi
+        /* "--CODEGEN--":132:133   */
+      0x00
+        /* "--CODEGEN--":129:130   */
+      dup1
+        /* "--CODEGEN--":122:134   */
+      revert
+        /* "--CODEGEN--":8:10   */
+    tag_13:
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      swap2
+      swap1
+      dup1
+      dup1
+      0x20
+      mul
+      0x20
+      add
+      mload(0x40)
+      swap1
+      dup2
+      add
+      0x40
+      mstore
+      dup1
+      swap4
+      swap3
+      swap2
+      swap1
+      dup2
+      dup2
+      mstore
+      0x20
+      add
+      dup4
+      dup4
+      0x20
+      mul
+        /* "--CODEGEN--":30:33   */
+      dup1
+        /* "--CODEGEN--":22:28   */
+      dup3
+        /* "--CODEGEN--":14:20   */
+      dup5
+        /* "--CODEGEN--":1:34   */
+      calldatacopy
+        /* "--CODEGEN--":99:100   */
+      0x00
+        /* "--CODEGEN--":93:96   */
+      dup2
+        /* "--CODEGEN--":85:91   */
+      dup5
+        /* "--CODEGEN--":81:97   */
+      add
+        /* "--CODEGEN--":74:101   */
+      mstore
+        /* "--CODEGEN--":137:141   */
+      0x1f
+        /* "--CODEGEN--":133:142   */
+      not
+        /* "--CODEGEN--":126:130   */
+      0x1f
+        /* "--CODEGEN--":121:124   */
+      dup3
+        /* "--CODEGEN--":117:131   */
+      add
+        /* "--CODEGEN--":113:143   */
+      and
+        /* "--CODEGEN--":106:143   */
+      swap1
+      pop
+        /* "--CODEGEN--":169:172   */
+      dup1
+        /* "--CODEGEN--":161:167   */
+      dup4
+        /* "--CODEGEN--":157:173   */
+      add
+        /* "--CODEGEN--":147:173   */
+      swap3
+      pop
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      pop
+      pop
+      pop
+      pop
+      pop
+      pop
+      swap2
+      swap3
+      swap2
+      swap3
+      swap1
+      pop
+      pop
+      pop
+      tag_14
+      jump	// in
+    tag_9:
+      stop
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+    tag_5:
+      tag_15
+      tag_16
+      jump	// in
+    tag_15:
+      mload(0x40)
+      dup1
+      dup3
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+    tag_8:
+        /* "Coin.sol":1105:1109  bool */
+      0x00
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":1128:1145  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":1128:1133  owner */
+      dup3
+        /* "Coin.sol":1128:1145  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":1128:1176  owner != SENTINEL && owners[owner] != address(0) */
+      dup1
+      iszero
+      tag_18
+      jumpi
+      pop
+        /* "Coin.sol":1174:1175  0 */
+      0x00
+        /* "Coin.sol":1149:1176  owners[owner] != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":1149:1155  owners */
+      0x00
+        /* "Coin.sol":1149:1162  owners[owner] */
+      dup1
+        /* "Coin.sol":1156:1161  owner */
+      dup5
+        /* "Coin.sol":1149:1162  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":1149:1176  owners[owner] != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":1128:1176  owner != SENTINEL && owners[owner] != address(0) */
+    tag_18:
+        /* "Coin.sol":1121:1176  return owner != SENTINEL && owners[owner] != address(0) */
+      swap1
+      pop
+        /* "Coin.sol":1052:1183  function isOwner(address owner) public view returns (bool) {... */
+      swap2
+      swap1
+      pop
+      jump	// out
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+    tag_14:
+        /* "Coin.sol":600:609  uint256 i */
+      0x00
+        /* "Coin.sol":612:613  0 */
+      dup1
+        /* "Coin.sol":600:613  uint256 i = 0 */
+      swap1
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+    tag_20:
+        /* "Coin.sol":619:626  _owners */
+      dup2
+        /* "Coin.sol":619:633  _owners.length */
+      mload
+        /* "Coin.sol":615:616  i */
+      dup2
+        /* "Coin.sol":615:633  i < _owners.length */
+      lt
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      iszero
+      tag_21
+      jumpi
+        /* "Coin.sol":654:667  address owner */
+      0x00
+        /* "Coin.sol":670:677  _owners */
+      dup3
+        /* "Coin.sol":678:679  i */
+      dup3
+        /* "Coin.sol":670:680  _owners[i] */
+      dup2
+      mload
+      dup2
+      lt
+      iszero
+      iszero
+      tag_23
+      jumpi
+      invalid
+    tag_23:
+      swap1
+      0x20
+      add
+      swap1
+      0x20
+      mul
+      add
+      mload
+        /* "Coin.sol":654:680  address owner = _owners[i] */
+      swap1
+      pop
+        /* "Coin.sol":719:720  0 */
+      0x00
+        /* "Coin.sol":702:721  owner != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":702:707  owner */
+      dup2
+        /* "Coin.sol":702:721  owner != address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":702:742  owner != address(0) && owner != SENTINEL */
+      dup1
+      iszero
+      tag_24
+      jumpi
+      pop
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":725:742  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":725:730  owner */
+      dup2
+        /* "Coin.sol":725:742  owner != SENTINEL */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+      iszero
+        /* "Coin.sol":702:742  owner != address(0) && owner != SENTINEL */
+    tag_24:
+        /* "Coin.sol":702:773  owner != address(0) && owner != SENTINEL && owners[owner] == address(0) */
+      dup1     
+      iszero   
+      tag_25   
+      jumpi    
+      pop      
+        /* "Coin.sol":771:772  0 */
+      0x00     
+        /* "Coin.sol":746:773  owners[owner] == address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and     
+        /* "Coin.sol":746:752  owners */
+      0x00    
+        /* "Coin.sol":746:759  owners[owner] */
+      dup1 
+        /* "Coin.sol":753:758  owner */
+      dup4
+        /* "Coin.sol":746:759  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":746:773  owners[owner] == address(0) */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      eq
+        /* "Coin.sol":702:773  owner != address(0) && owner != SENTINEL && owners[owner] == address(0) */
+    tag_25:
+        /* "Coin.sol":694:819  require(owner != address(0) && owner != SENTINEL && owners[owner] == address(0),... */
+      iszero
+      iszero
+      tag_26
+      jumpi
+      mload(0x40)
+      0x08c379a000000000000000000000000000000000000000000000000000000000
+      dup2
+      mstore
+      0x04
+      add
+      dup1
+      dup1
+      0x20
+      add
+      dup3
+      dup2
+      sub
+      dup3
+      mstore
+      0x15
+      dup2
+      mstore
+      0x20
+      add
+      dup1
+      0x496e76616c6964206f776e657220616464726573730000000000000000000000
+      dup2
+      mstore
+      pop
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      revert
+    tag_26:
+        /* "Coin.sol":937:943  owners */
+      0x00
+        /* "Coin.sol":937:953  owners[SENTINEL] */
+      dup1
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":937:953  owners[SENTINEL] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+      swap1
+      sload
+      swap1
+      0x0100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+        /* "Coin.sol":921:927  owners */
+      0x00
+        /* "Coin.sol":921:934  owners[owner] */
+      dup1
+        /* "Coin.sol":928:933  owner */
+      dup4
+        /* "Coin.sol":921:934  owners[owner] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "Coin.sol":921:953  owners[owner] = owners[SENTINEL] */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":986:991  owner */
+      dup1
+        /* "Coin.sol":967:973  owners */
+      0x00
+        /* "Coin.sol":967:983  owners[SENTINEL] */
+      dup1
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":967:983  owners[SENTINEL] */
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap1
+      dup2
+      mstore
+      0x20
+      add
+      0x00
+      keccak256
+      0x00
+        /* "Coin.sol":967:991  owners[SENTINEL] = owner */
+      0x0100
+      exp
+      dup2
+      sload
+      dup2
+      0xffffffffffffffffffffffffffffffffffffffff
+      mul
+      not
+      and
+      swap1
+      dup4
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      mul
+      or
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      pop
+        /* "Coin.sol":635:638  i++ */
+      dup1
+      dup1
+      0x01
+      add
+      swap2
+      pop
+      pop
+        /* "Coin.sol":595:1002  for (uint256 i = 0; i < _owners.length; i++) {... */
+      jump(tag_20)
+    tag_21:
+      pop
+        /* "Coin.sol":1025:1032  _owners */
+      dup1
+        /* "Coin.sol":1025:1039  _owners.length */
+      mload
+        /* "Coin.sol":1011:1021  ownerCount */
+      0x01
+      0x00
+        /* "Coin.sol":1011:1039  ownerCount += _owners.length */
+      dup3
+      dup3
+      sload
+      add
+      swap3
+      pop
+      pop
+      dup2
+      swap1
+      sstore
+      pop
+        /* "Coin.sol":533:1046  function addOwners(address[] memory _owners) public {... */
+      pop
+      jump	// out
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+    tag_16:
+        /* "Coin.sol":522:525  0x1 */
+      0x01
+        /* "Coin.sol":479:526  address public constant SENTINEL = address(0x1) */
+      dup2
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820a44b1234b84d73abdb6fd86e77021522798c2939ee4c73b68b636a7ea65bd20e0029
+}
+
+
+======= Coin.sol:SafeArithmetic =======
+EVM assembly:
+    /* "Coin.sol":25:346  library SafeArithmetic {... */
+  dataSize(sub_0)
+  dataOffset(sub_0)
+    /* "--CODEGEN--":132:134   */
+  0x0b
+    /* "--CODEGEN--":166:173   */
+  dup3
+    /* "--CODEGEN--":155:164   */
+  dup3
+    /* "--CODEGEN--":146:153   */
+  dup3
+    /* "--CODEGEN--":137:174   */
+  codecopy
+    /* "--CODEGEN--":252:259   */
+  dup1
+    /* "--CODEGEN--":246:260   */
+  mload
+    /* "--CODEGEN--":243:244   */
+  0x00
+    /* "--CODEGEN--":238:261   */
+  byte
+    /* "--CODEGEN--":232:236   */
+  0x73
+    /* "--CODEGEN--":229:262   */
+  eq
+    /* "--CODEGEN--":270:271   */
+  0x00
+    /* "--CODEGEN--":265:285   */
+  dup2
+  eq
+  tag_2
+  jumpi
+    /* "--CODEGEN--":222:285   */
+  jump(tag_1)
+    /* "--CODEGEN--":265:285   */
+tag_2:
+    /* "--CODEGEN--":274:283   */
+  invalid
+    /* "--CODEGEN--":222:285   */
+tag_1:
+  pop
+    /* "--CODEGEN--":298:307   */
+  address
+    /* "--CODEGEN--":295:296   */
+  0x00
+    /* "--CODEGEN--":288:308   */
+  mstore
+    /* "--CODEGEN--":328:332   */
+  0x73
+    /* "--CODEGEN--":319:326   */
+  dup2
+    /* "--CODEGEN--":311:333   */
+  mstore8
+    /* "--CODEGEN--":352:359   */
+  dup3
+    /* "--CODEGEN--":343:350   */
+  dup2
+    /* "--CODEGEN--":336:360   */
+  return
+stop
+
+sub_0: assembly {
+        /* "Coin.sol":25:346  library SafeArithmetic {... */
+      eq(address, deployTimeAddress())
+      mstore(0x40, 0x80)
+      0x00
+      dup1
+      revert
+
+    auxdata: 0xa165627a7a723058200aa6d2344acaaa9ac8a7cfb654ae645e76b769d3f44b7fe8dfbd3164609c0e800029
+}
+
